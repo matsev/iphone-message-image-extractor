@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'iphone-message-image-extractor'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.xerial:sqlite-jdbc:3.8.11.2')
+    compile('org.springframework:spring-jdbc:4.2.2.RELEASE')
+    compile('commons-codec:commons-codec:1.10')
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.8'
+}
